@@ -1,0 +1,34 @@
+﻿# Candidate PII & Databases
+recruit_pipeline.db
+recruit_pipeline.db-journal
+recruit_pipeline.db-wal
+candidates.json
+*.db
+*.sqlite
+*.sqlite3
+
+# Runtime Logs, Backups & Archives
+autorun.log
+*.log
+*.zip
+jobs_consultancy_files.zip
+jobs-consultancy-/
+
+# Ephemeral State & Metadata
+.autorun_baseline.json
+.autorun_meta.json
+.cache_meta.json
+.seen_releases.json
+history.json
+status.json
+suggestions.json
+digest.md
+
+# Local Virtual Environments & Agent Links
+.venv/
+venv/
+.agents/
+.claude/
+__pycache__/
+.env
+*.env
