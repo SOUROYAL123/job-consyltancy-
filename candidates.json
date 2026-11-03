@@ -1,0 +1,33 @@
+[
+  {
+    "id": "CAND-001",
+    "name": "Aarav Sharma",
+    "role": "Cloud / DevOps Engineer",
+    "skills": [
+      "aws",
+      "terraform",
+      "docker",
+      "kubernetes",
+      "python",
+      "linux",
+      "ci/cd"
+    ],
+    "experience_years": 3,
+    "summary": "AWS Certified Cloud Support & DevOps Engineer experienced in Terraform, Docker, Linux, and Python automation."
+  },
+  {
+    "id": "CAND-002",
+    "name": "Priya Nair",
+    "role": "Full Stack Python Developer",
+    "skills": [
+      "python",
+      "fastapi",
+      "react",
+      "postgresql",
+      "docker",
+      "rest api"
+    ],
+    "experience_years": 4,
+    "summary": "Backend-focused Full Stack Engineer building FastAPI microservices, PostgreSQL data pipelines, and React dashboards."
+  }
+]

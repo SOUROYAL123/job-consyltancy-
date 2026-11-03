@@ -1,0 +1,145 @@
+{
+  "items": [
+    {
+      "repo": "speedyapply/JobSpy",
+      "stars": 4614,
+      "license": "MIT",
+      "pushed_days": 5,
+      "description": "Jobs scraper library for LinkedIn, Indeed, Glassdoor, ZipRecruiter, Bayt, Naukri, BDJobs & HelloWork",
+      "source": "resolve:JobSpy",
+      "layer": "Job feeds",
+      "found": "2026-11-02"
+    },
+    {
+      "repo": "rainmanjam/jobspy-api",
+      "stars": 383,
+      "license": "MIT",
+      "pushed_days": 522,
+      "description": "Dockerized version of JobSpy job search utility with API key auth, rate limiting, and proxy support.",
+      "source": "resolve:JobSpy",
+      "layer": "Job feeds",
+      "found": "2026-11-02"
+    },
+    {
+      "repo": "adrianhajdin/project_react_native_jobs",
+      "stars": 1564,
+      "license": null,
+      "pushed_days": 1043,
+      "description": "",
+      "source": "resolve:react-native-jobs",
+      "layer": "Mobile candidate app",
+      "found": "2026-11-02"
+    },
+    {
+      "repo": "UltraDEV007/react-native-jobs",
+      "stars": 16,
+      "license": "MIT",
+      "pushed_days": 735,
+      "description": "",
+      "source": "resolve:react-native-jobs",
+      "layer": "Mobile candidate app",
+      "found": "2026-11-02"
+    },
+    {
+      "repo": "mbiesiad/awesome-translations",
+      "stars": 193,
+      "license": "CC0-1.0",
+      "pushed_days": 287,
+      "description": "\ud83d\ude0e Awesome lists about Internationalization & localization stuff. l10n, g11n, m17n, i18n. Translations! \ud83c\udf0e\ud83c\udf0d",
+      "source": "resolve:awesome-translations",
+      "layer": "Multilingual",
+      "found": "2026-11-02"
+    },
+    {
+      "repo": "kaspernj/awesome_translations",
+      "stars": 7,
+      "license": "MIT",
+      "pushed_days": 109,
+      "description": "Semi-automatic maintenance of most translations in a Rails app.",
+      "source": "resolve:awesome-translations",
+      "layer": "Multilingual",
+      "found": "2026-11-02"
+    },
+    {
+      "repo": "saeedkolivand/ai-job-hunter-app",
+      "stars": 62,
+      "license": "Apache-2.0",
+      "pushed_days": 0,
+      "description": "Local-first AI desktop assistant that scrapes job boards, matches roles to your resume, and auto-generates resumes & cover letters. Offline ",
+      "source": "topic:ats",
+      "layer": "Employer CRM",
+      "found": "2026-11-02"
+    },
+    {
+      "repo": "colophon-group/jobseek",
+      "stars": 220,
+      "license": "MIT",
+      "pushed_days": 0,
+      "description": " Monitors company career pages for new job postings and surfaces them in a single dashboard.",
+      "source": "topic:ats",
+      "layer": "Employer CRM",
+      "found": "2026-11-02"
+    },
+    {
+      "repo": "cvfile/cv",
+      "stars": 10,
+      "license": "Apache-2.0",
+      "pushed_days": 0,
+      "description": "The .cv open file format - spec, SDKs, viewer, CLI, server middleware",
+      "source": "topic:ats",
+      "layer": "Employer CRM",
+      "found": "2026-11-02"
+    },
+    {
+      "repo": "albertosca/moonlighter",
+      "stars": 11,
+      "license": "AGPL-3.0",
+      "pushed_days": 0,
+      "description": "The job-application assistant that leaves the last word to you: scans the job boards you choose, scores postings against your profile, and d",
+      "source": "topic:ats",
+      "layer": "Employer CRM",
+      "found": "2026-11-02"
+    },
+    {
+      "repo": "JRDevo/ETS2-ATS-DLAA-DLSS-Injection-Mod",
+      "stars": 50,
+      "license": "NOASSERTION",
+      "pushed_days": 0,
+      "description": "NVIDIA DLAA and DLSS upscaling for Euro Truck Simulator 2 and American Truck Simulator, flat and VR. Unofficial fan mod (dinput8.dll injecto",
+      "source": "topic:ats",
+      "layer": "Employer CRM",
+      "found": "2026-11-02"
+    },
+    {
+      "repo": "kayden-vs/jobradar",
+      "stars": 15,
+      "license": "MIT",
+      "pushed_days": 0,
+      "description": "Job hunting on autopilot - 17 sources, Gemini scores them, Telegram gets the winners.",
+      "source": "topic:ats",
+      "layer": "Employer CRM",
+      "found": "2026-11-02"
+    },
+    {
+      "repo": "Fighter90/career-ops-ui",
+      "stars": 93,
+      "license": "MIT",
+      "pushed_days": 0,
+      "description": "Clean, docs-style web UI for the career-ops AI job-search pipeline. Search ATS adapters (Greenhouse/Ashby/Lever) + regional portals (hh.ru/H",
+      "source": "topic:ats",
+      "layer": "Employer CRM",
+      "found": "2026-11-02"
+    },
+    {
+      "repo": "vesaias/JobNavigator",
+      "stars": 173,
+      "license": "MIT",
+      "pushed_days": 0,
+      "description": "Self-hosted, multi-account job-hunt automation: scrape career pages and job boards, score jobs against your r\u00e9sum\u00e9s with AI, tailor r\u00e9sum\u00e9s ",
+      "source": "topic:ats",
+      "layer": "Employer CRM",
+      "found": "2026-11-02"
+    }
+  ],
+  "dismissed": []
+}

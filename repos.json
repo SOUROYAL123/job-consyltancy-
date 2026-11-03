@@ -1,0 +1,506 @@
+[
+  {
+    "name": "Supabase",
+    "repo": "supabase/supabase",
+    "layer": "Core platform",
+    "phase": 1,
+    "mode": "service",
+    "note": "Auth, Postgres, storage"
+  },
+  {
+    "name": "n8n",
+    "repo": "n8n-io/n8n",
+    "layer": "Core platform",
+    "phase": 1,
+    "mode": "service",
+    "note": "Workflow glue"
+  },
+  {
+    "name": "Streamlit",
+    "repo": "streamlit/streamlit",
+    "layer": "Recruiter dashboard",
+    "phase": 1,
+    "mode": "tool",
+    "note": ""
+  },
+  {
+    "name": "Metabase",
+    "repo": "metabase/metabase",
+    "layer": "Analytics & reporting",
+    "phase": 2,
+    "mode": "service",
+    "note": "BI over Supabase"
+  },
+  {
+    "name": "PostHog",
+    "repo": "PostHog/posthog",
+    "layer": "Analytics & reporting",
+    "phase": 3,
+    "mode": "service",
+    "note": "Product analytics"
+  },
+  {
+    "name": "Jobicy / ATS feeds",
+    "repo": "",
+    "layer": "Job feeds",
+    "phase": 1,
+    "mode": "reference",
+    "note": "API/feeds, not a repo; set if you have one"
+  },
+  {
+    "name": "Resume-Matcher",
+    "repo": "srbhr/Resume-Matcher",
+    "layer": "Candidate intake & parsing",
+    "phase": 1,
+    "mode": "clone",
+    "note": ""
+  },
+  {
+    "name": "OpenResume",
+    "repo": "xitanggg/open-resume",
+    "layer": "Candidate intake & parsing",
+    "phase": 2,
+    "mode": "reference",
+    "note": "Resume builder/parser"
+  },
+  {
+    "name": "Docling",
+    "repo": "docling-project/docling",
+    "layer": "Candidate intake & parsing",
+    "phase": 2,
+    "mode": "tool",
+    "note": "PDF/DOCX to structured text"
+  },
+  {
+    "name": "Unstructured",
+    "repo": "Unstructured-IO/unstructured",
+    "layer": "Candidate intake & parsing",
+    "phase": 2,
+    "mode": "tool",
+    "note": ""
+  },
+  {
+    "name": "spaCy",
+    "repo": "explosion/spaCy",
+    "layer": "Candidate intake & parsing",
+    "phase": 2,
+    "mode": "tool",
+    "note": "Skill/entity extraction"
+  },
+  {
+    "name": "Ollama",
+    "repo": "ollama/ollama",
+    "layer": "AI matching",
+    "phase": 1,
+    "mode": "service",
+    "note": "Local LLM"
+  },
+  {
+    "name": "sentence-transformers",
+    "repo": "UKPLab/sentence-transformers",
+    "layer": "AI matching",
+    "phase": 2,
+    "mode": "tool",
+    "note": "Embeddings"
+  },
+  {
+    "name": "pgvector",
+    "repo": "pgvector/pgvector",
+    "layer": "AI matching",
+    "phase": 2,
+    "mode": "service",
+    "note": "Vectors inside Postgres"
+  },
+  {
+    "name": "Qdrant",
+    "repo": "qdrant/qdrant",
+    "layer": "AI matching",
+    "phase": 3,
+    "mode": "service",
+    "note": "Only if pgvector is not enough"
+  },
+  {
+    "name": "LlamaIndex",
+    "repo": "run-llama/llama_index",
+    "layer": "AI matching",
+    "phase": 3,
+    "mode": "tool",
+    "note": ""
+  },
+  {
+    "name": "OmniRoute",
+    "repo": "diegosouzapw/OmniRoute",
+    "layer": "LLM gateway",
+    "phase": 2,
+    "mode": "service",
+    "note": "Pools free tiers; NON-candidate data only. Check licence + provider ToS"
+  },
+  {
+    "name": "FreeLLMAPI",
+    "repo": "platoba/freellmapi",
+    "layer": "LLM gateway",
+    "phase": 2,
+    "mode": "service",
+    "note": "Verify owner/name: several repos use this name. NON-candidate data only"
+  },
+  {
+    "name": "LiteLLM",
+    "repo": "BerriAI/litellm",
+    "layer": "LLM gateway",
+    "phase": 2,
+    "mode": "service",
+    "note": "Mature gateway with budgets and logging"
+  },
+  {
+    "name": "Promptfoo",
+    "repo": "promptfoo/promptfoo",
+    "layer": "AI evaluation & fairness",
+    "phase": 2,
+    "mode": "tool",
+    "note": "Test prompts on sample CVs"
+  },
+  {
+    "name": "Langfuse",
+    "repo": "langfuse/langfuse",
+    "layer": "AI evaluation & fairness",
+    "phase": 2,
+    "mode": "service",
+    "note": "Trace prompts, cost, feedback"
+  },
+  {
+    "name": "Fairlearn",
+    "repo": "fairlearn/fairlearn",
+    "layer": "AI evaluation & fairness",
+    "phase": 3,
+    "mode": "tool",
+    "note": "Bias metrics"
+  },
+  {
+    "name": "Twenty",
+    "repo": "twentyhq/twenty",
+    "layer": "Employer CRM",
+    "phase": 2,
+    "mode": "service",
+    "note": "Open-source CRM"
+  },
+  {
+    "name": "OpenCATS",
+    "repo": "opencats/OpenCATS",
+    "layer": "Employer CRM",
+    "phase": 3,
+    "mode": "reference",
+    "note": "Classic open ATS"
+  },
+  {
+    "name": "FreeATS",
+    "repo": "",
+    "layer": "Employer CRM",
+    "phase": 3,
+    "mode": "reference",
+    "note": "Owner unconfirmed; autorun will suggest the repo"
+  },
+  {
+    "name": "JobSpy",
+    "repo": "",
+    "layer": "Job feeds",
+    "phase": 1,
+    "mode": "tool",
+    "note": "Job-board scraper; owner unconfirmed, autorun will suggest the repo"
+  },
+  {
+    "name": "Reqcore",
+    "repo": "reqcore-inc/reqcore-app",
+    "layer": "Employer CRM",
+    "phase": 3,
+    "mode": "reference",
+    "note": "Newer open-source ATS; verify maturity"
+  },
+  {
+    "name": "SpotAxis",
+    "repo": "Assystant/SpotAxis",
+    "layer": "Employer CRM",
+    "phase": 3,
+    "mode": "reference",
+    "note": "Django ATS / job portal; check activity"
+  },
+  {
+    "name": "Cal.com",
+    "repo": "calcom/cal.com",
+    "layer": "Interview scheduling",
+    "phase": 1,
+    "mode": "service",
+    "note": ""
+  },
+  {
+    "name": "Chatwoot",
+    "repo": "chatwoot/chatwoot",
+    "layer": "Communication inbox",
+    "phase": 2,
+    "mode": "service",
+    "note": "Shared inbox, WhatsApp/email"
+  },
+  {
+    "name": "Listmonk",
+    "repo": "knadh/listmonk",
+    "layer": "Communication inbox",
+    "phase": 2,
+    "mode": "service",
+    "note": "Job-alert newsletters"
+  },
+  {
+    "name": "Mautic",
+    "repo": "mautic/mautic",
+    "layer": "Communication inbox",
+    "phase": 3,
+    "mode": "service",
+    "note": "Marketing automation"
+  },
+  {
+    "name": "Documenso",
+    "repo": "documenso/documenso",
+    "layer": "Agreements & e-signatures",
+    "phase": 1,
+    "mode": "service",
+    "note": ""
+  },
+  {
+    "name": "Invoice Ninja",
+    "repo": "invoiceninja/invoiceninja",
+    "layer": "Invoicing & payments",
+    "phase": 1,
+    "mode": "service",
+    "note": ""
+  },
+  {
+    "name": "Scrapy",
+    "repo": "scrapy/scrapy",
+    "layer": "Market research",
+    "phase": 2,
+    "mode": "tool",
+    "note": ""
+  },
+  {
+    "name": "Playwright (Python)",
+    "repo": "microsoft/playwright-python",
+    "layer": "Market research",
+    "phase": 2,
+    "mode": "tool",
+    "note": ""
+  },
+  {
+    "name": "Crawlee (Python)",
+    "repo": "apify/crawlee-python",
+    "layer": "Market research",
+    "phase": 3,
+    "mode": "tool",
+    "note": ""
+  },
+  {
+    "name": "Uptime Kuma",
+    "repo": "louislam/uptime-kuma",
+    "layer": "Security & monitoring",
+    "phase": 2,
+    "mode": "service",
+    "note": ""
+  },
+  {
+    "name": "restic",
+    "repo": "restic/restic",
+    "layer": "Security & monitoring",
+    "phase": 2,
+    "mode": "tool",
+    "note": "Encrypted backups"
+  },
+  {
+    "name": "Grafana",
+    "repo": "grafana/grafana",
+    "layer": "Security & monitoring",
+    "phase": 3,
+    "mode": "service",
+    "note": ""
+  },
+  {
+    "name": "Sentry",
+    "repo": "getsentry/sentry",
+    "layer": "Security & monitoring",
+    "phase": 3,
+    "mode": "service",
+    "note": ""
+  },
+  {
+    "name": "Keycloak",
+    "repo": "keycloak/keycloak",
+    "layer": "Security & monitoring",
+    "phase": 3,
+    "mode": "service",
+    "note": "SSO for client portal"
+  },
+  {
+    "name": "Presidio",
+    "repo": "microsoft/presidio",
+    "layer": "Compliance & privacy",
+    "phase": 2,
+    "mode": "tool",
+    "note": "PII redaction before sending CVs to AI"
+  },
+  {
+    "name": "KeePassXC",
+    "repo": "keepassxreboot/keepassxc",
+    "layer": "Personal & dev security",
+    "phase": 1,
+    "mode": "tool",
+    "note": "Offline password manager"
+  },
+  {
+    "name": "Bitwarden clients",
+    "repo": "bitwarden/clients",
+    "layer": "Personal & dev security",
+    "phase": 1,
+    "mode": "tool",
+    "note": "Password manager apps"
+  },
+  {
+    "name": "Aegis Authenticator",
+    "repo": "beemdevelopment/Aegis",
+    "layer": "Personal & dev security",
+    "phase": 1,
+    "mode": "tool",
+    "note": "Android 2FA app"
+  },
+  {
+    "name": "Ente (Auth)",
+    "repo": "ente-io/ente",
+    "layer": "Personal & dev security",
+    "phase": 2,
+    "mode": "tool",
+    "note": "Encrypted 2FA codes with backup"
+  },
+  {
+    "name": "AdGuard Home",
+    "repo": "AdguardTeam/AdGuardHome",
+    "layer": "Personal & dev security",
+    "phase": 2,
+    "mode": "service",
+    "note": "Network-wide DNS filtering"
+  },
+  {
+    "name": "Pi-hole",
+    "repo": "pi-hole/pi-hole",
+    "layer": "Personal & dev security",
+    "phase": 2,
+    "mode": "service",
+    "note": "DNS filtering alternative"
+  },
+  {
+    "name": "uBlock Origin",
+    "repo": "gorhill/uBlock",
+    "layer": "Personal & dev security",
+    "phase": 1,
+    "mode": "tool",
+    "note": "Browser protection"
+  },
+  {
+    "name": "VeraCrypt",
+    "repo": "veracrypt/VeraCrypt",
+    "layer": "Personal & dev security",
+    "phase": 2,
+    "mode": "tool",
+    "note": "Disk/file encryption"
+  },
+  {
+    "name": "Cryptomator",
+    "repo": "cryptomator/cryptomator",
+    "layer": "Personal & dev security",
+    "phase": 2,
+    "mode": "tool",
+    "note": "Encrypted cloud folders"
+  },
+  {
+    "name": "Gitleaks",
+    "repo": "gitleaks/gitleaks",
+    "layer": "Personal & dev security",
+    "phase": 1,
+    "mode": "tool",
+    "note": "Stop secrets leaking into git"
+  },
+  {
+    "name": "TruffleHog",
+    "repo": "trufflesecurity/trufflehog",
+    "layer": "Personal & dev security",
+    "phase": 2,
+    "mode": "tool",
+    "note": "Secret scanning"
+  },
+  {
+    "name": "Wazuh",
+    "repo": "wazuh/wazuh",
+    "layer": "Personal & dev security",
+    "phase": 3,
+    "mode": "service",
+    "note": "Endpoint monitoring"
+  },
+  {
+    "name": "Prefect",
+    "repo": "PrefectHQ/prefect",
+    "layer": "Pipelines & data quality",
+    "phase": 2,
+    "mode": "tool",
+    "note": ""
+  },
+  {
+    "name": "Great Expectations",
+    "repo": "great-expectations/great_expectations",
+    "layer": "Pipelines & data quality",
+    "phase": 2,
+    "mode": "tool",
+    "note": ""
+  },
+  {
+    "name": "RapidFuzz",
+    "repo": "rapidfuzz/RapidFuzz",
+    "layer": "Pipelines & data quality",
+    "phase": 2,
+    "mode": "tool",
+    "note": "Duplicate candidate matching"
+  },
+  {
+    "name": "Expo",
+    "repo": "expo/expo",
+    "layer": "Mobile candidate app",
+    "phase": 3,
+    "mode": "reference",
+    "note": ""
+  },
+  {
+    "name": "react-native-jobs",
+    "repo": "",
+    "layer": "Mobile candidate app",
+    "phase": 3,
+    "mode": "reference",
+    "note": "Fill owner/name"
+  },
+  {
+    "name": "Weblate",
+    "repo": "WeblateOrg/weblate",
+    "layer": "Multilingual",
+    "phase": 3,
+    "mode": "service",
+    "note": ""
+  },
+  {
+    "name": "awesome-translations",
+    "repo": "",
+    "layer": "Multilingual",
+    "phase": 3,
+    "mode": "reference",
+    "note": "Fill owner/name"
+  },
+  {
+    "name": "Medusa",
+    "repo": "medusajs/medusa",
+    "layer": "Marketplace / white-label",
+    "phase": 3,
+    "mode": "service",
+    "note": ""
+  }
+]
