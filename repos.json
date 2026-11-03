@@ -9,7 +9,7 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "goauthentik/authentik",
@@ -18,7 +18,7 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "pomerium/pomerium",
@@ -27,7 +27,7 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "tailscale/tailscale",
@@ -36,25 +36,34 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "cerbos/cerbos",
         "role": "Policy-as-code authorization layer for recruiter RBAC",
         "priority": "high",
         "tier": 2,
-        "relevancy_score": 97.0,
+        "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "authzed/spicedb",
         "role": "Fine-grained relationship-based access control",
         "priority": "high",
         "tier": 2,
-        "relevancy_score": 92.0,
+        "relevancy_score": 97.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
+      },
+      {
+        "repo": "gravitational/teleport",
+        "role": "Audited short-lived SSH and database access",
+        "priority": "optional",
+        "tier": 3,
+        "relevancy_score": 83.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "juanfont/headscale",
@@ -63,25 +72,16 @@
         "tier": 2,
         "relevancy_score": 80.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
-      },
-      {
-        "repo": "gravitational/teleport",
-        "role": "Audited short-lived SSH and database access",
-        "priority": "optional",
-        "tier": 3,
-        "relevancy_score": 78.0,
-        "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "openfga/openfga",
         "role": "Fine-grained authorization engine",
         "priority": "optional",
         "tier": 2,
-        "relevancy_score": 75.0,
+        "relevancy_score": 80.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       }
     ],
     "secrets_and_encryption": [
@@ -92,7 +92,7 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "Infisical/agent-vault",
@@ -101,25 +101,25 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "getsops/sops",
         "role": "Encrypted YAML, JSON, and ENV configuration files",
         "priority": "high",
         "tier": 1,
-        "relevancy_score": 92.0,
+        "relevancy_score": 97.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "FiloSottile/age",
         "role": "Modern file encryption backend for SOPS and backups",
         "priority": "high",
         "tier": 1,
-        "relevancy_score": 92.0,
+        "relevancy_score": 97.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "openbao/openbao",
@@ -128,7 +128,7 @@
         "tier": 3,
         "relevancy_score": 80.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       }
     ],
     "code_and_supply_chain": [
@@ -139,7 +139,7 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "trufflesecurity/trufflehog",
@@ -148,7 +148,7 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "semgrep/semgrep",
@@ -157,7 +157,7 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "PyCQA/bandit",
@@ -166,7 +166,7 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "pypa/pip-audit",
@@ -175,7 +175,7 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "step-security/harden-runner",
@@ -184,7 +184,7 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "aquasecurity/trivy",
@@ -193,7 +193,7 @@
         "tier": 1,
         "relevancy_score": 98.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "google/osv-scanner",
@@ -202,7 +202,7 @@
         "tier": 1,
         "relevancy_score": 92.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "anchore/syft",
@@ -211,7 +211,7 @@
         "tier": 2,
         "relevancy_score": 92.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "anchore/grype",
@@ -220,7 +220,7 @@
         "tier": 2,
         "relevancy_score": 92.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "renovatebot/renovate",
@@ -229,25 +229,34 @@
         "tier": 2,
         "relevancy_score": 92.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "woodruffw/zizmor",
         "role": "Static security analysis for GitHub Actions workflows",
         "priority": "high",
         "tier": 1,
-        "relevancy_score": 87.0,
+        "relevancy_score": 92.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "Yelp/detect-secrets",
         "role": "Baseline secret detection for legacy repositories",
         "priority": "medium",
         "tier": 2,
-        "relevancy_score": 85.0,
+        "relevancy_score": 90.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
+      },
+      {
+        "repo": "sigstore/cosign",
+        "role": "Container image signing and verification",
+        "priority": "medium",
+        "tier": 3,
+        "relevancy_score": 90.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "ossf/scorecard",
@@ -256,16 +265,7 @@
         "tier": 2,
         "relevancy_score": 85.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
-      },
-      {
-        "repo": "sigstore/cosign",
-        "role": "Container image signing and verification",
-        "priority": "medium",
-        "tier": 3,
-        "relevancy_score": 85.0,
-        "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       }
     ],
     "ai_guardrails_and_dlp": [
@@ -276,7 +276,7 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "protectai/llm-guard",
@@ -285,25 +285,34 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "promptfoo/promptfoo",
         "role": "CI red-teaming and regression testing for agent prompts",
         "priority": "high",
         "tier": 1,
-        "relevancy_score": 92.0,
+        "relevancy_score": 97.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "guardrails-ai/guardrails",
         "role": "Structured LLM output validation and enforcement",
         "priority": "high",
         "tier": 2,
-        "relevancy_score": 92.0,
+        "relevancy_score": 97.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
+      },
+      {
+        "repo": "ljh-sh/token-actuary",
+        "role": "Token counting, truncation, and pre-inference firewall",
+        "priority": "medium",
+        "tier": 2,
+        "relevancy_score": 85.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "NVIDIA/garak",
@@ -312,7 +321,7 @@
         "tier": 2,
         "relevancy_score": 80.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "Azure/PyRIT",
@@ -321,25 +330,16 @@
         "tier": 3,
         "relevancy_score": 80.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
-      },
-      {
-        "repo": "ljh-sh/token-actuary",
-        "role": "Token counting, truncation, and pre-inference firewall",
-        "priority": "medium",
-        "tier": 2,
-        "relevancy_score": 80.0,
-        "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "NVIDIA/NeMo-Guardrails",
         "role": "Programmable rails for conversational and tool-calling agents",
         "priority": "medium",
         "tier": 2,
-        "relevancy_score": 75.0,
+        "relevancy_score": 80.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       }
     ],
     "data_and_container_hardening": [
@@ -350,7 +350,7 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "restic/restic",
@@ -359,7 +359,16 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
+      },
+      {
+        "repo": "bridgecrewio/checkov",
+        "role": "Terraform, Docker, and Kubernetes misconfiguration scanner",
+        "priority": "high",
+        "tier": 2,
+        "relevancy_score": 97.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "Cisco-Talos/clamav",
@@ -368,16 +377,7 @@
         "tier": 1,
         "relevancy_score": 92.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
-      },
-      {
-        "repo": "bridgecrewio/checkov",
-        "role": "Terraform, Docker, and Kubernetes misconfiguration scanner",
-        "priority": "high",
-        "tier": 2,
-        "relevancy_score": 92.0,
-        "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "hadolint/hadolint",
@@ -386,7 +386,7 @@
         "tier": 2,
         "relevancy_score": 87.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "CISOfy/lynis",
@@ -395,7 +395,7 @@
         "tier": 2,
         "relevancy_score": 83.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "goodwithtech/dockle",
@@ -404,7 +404,7 @@
         "tier": 2,
         "relevancy_score": 75.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       }
     ],
     "detection_siem_and_edge": [
@@ -413,9 +413,27 @@
         "role": "Runtime container threat and syscall detection",
         "priority": "high",
         "tier": 2,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
+      },
+      {
+        "repo": "crowdsecurity/crowdsec",
+        "role": "Collaborative IP reputation and brute-force blocker",
+        "priority": "high",
+        "tier": 1,
         "relevancy_score": 97.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
+      },
+      {
+        "repo": "corazawaf/coraza",
+        "role": "OWASP-compatible Web Application Firewall for Caddy",
+        "priority": "high",
+        "tier": 2,
+        "relevancy_score": 97.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "wazuh/wazuh",
@@ -424,16 +442,7 @@
         "tier": 2,
         "relevancy_score": 92.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
-      },
-      {
-        "repo": "crowdsecurity/crowdsec",
-        "role": "Collaborative IP reputation and brute-force blocker",
-        "priority": "high",
-        "tier": 1,
-        "relevancy_score": 92.0,
-        "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "caddyserver/caddy",
@@ -442,16 +451,7 @@
         "tier": 1,
         "relevancy_score": 92.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
-      },
-      {
-        "repo": "corazawaf/coraza",
-        "role": "OWASP-compatible Web Application Firewall for Caddy",
-        "priority": "high",
-        "tier": 2,
-        "relevancy_score": 92.0,
-        "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "coreruleset/coreruleset",
@@ -460,7 +460,7 @@
         "tier": 2,
         "relevancy_score": 92.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "louislam/uptime-kuma",
@@ -469,16 +469,16 @@
         "tier": 1,
         "relevancy_score": 92.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "zaproxy/zaproxy",
         "role": "Dynamic application security testing for web and APIs",
         "priority": "medium",
         "tier": 2,
-        "relevancy_score": 75.0,
+        "relevancy_score": 80.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "projectdiscovery/nuclei",
@@ -487,7 +487,7 @@
         "tier": 2,
         "relevancy_score": 75.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       }
     ],
     "recruitment_ai_core_extra": [
@@ -498,7 +498,7 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "langfuse/langfuse",
@@ -507,7 +507,7 @@
         "tier": 1,
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "BerriAI/litellm",
@@ -516,7 +516,16 @@
         "tier": 1,
         "relevancy_score": 95.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
+      },
+      {
+        "repo": "minio/minio",
+        "role": "Private S3-compatible object storage for encrypted CVs",
+        "priority": "high",
+        "tier": 1,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "qdrant/qdrant",
@@ -525,25 +534,16 @@
         "tier": 2,
         "relevancy_score": 87.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
-      },
-      {
-        "repo": "minio/minio",
-        "role": "Private S3-compatible object storage for encrypted CVs",
-        "priority": "high",
-        "tier": 1,
-        "relevancy_score": 87.0,
-        "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "PrefectHQ/prefect",
         "role": "Workflow orchestration for scheduled job/CV pipelines",
         "priority": "medium",
         "tier": 2,
-        "relevancy_score": 80.0,
+        "relevancy_score": 85.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       }
     ],
     "accessibility_and_self_healing": [
@@ -560,7 +560,7 @@
         ],
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "Textualize/rich",
@@ -574,7 +574,7 @@
         ],
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "jd/tenacity",
@@ -589,7 +589,7 @@
         ],
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "astral-sh/ruff",
@@ -603,7 +603,7 @@
         ],
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "astral-sh/uv",
@@ -617,7 +617,7 @@
         ],
         "relevancy_score": 100.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "pa11y/pa11y",
@@ -629,9 +629,9 @@
           "dashboard",
           "ci"
         ],
-        "relevancy_score": 92.0,
+        "relevancy_score": 97.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "Textualize/textual",
@@ -645,7 +645,7 @@
         ],
         "relevancy_score": 92.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       },
       {
         "repo": "open-telemetry/opentelemetry-python",
@@ -659,9 +659,9 @@
         ],
         "relevancy_score": 92.0,
         "stars_verified": 15000,
-        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+        "last_checked_utc": "2026-11-03T11:33:44.042901+00:00"
       }
     ]
   },
-  "last_self_heal_utc": "2026-11-03T08:22:43.397117+00:00"
+  "last_self_heal_utc": "2026-11-03T11:33:44.042901+00:00"
 }
