@@ -2,8 +2,8 @@ import hashlib
 import json
 import re
 import sqlite3
-from datetime import datetime, timezone
-from typing import Any, Dict, Tuple
+from datetime import UTC, datetime
+from typing import Any
 from urllib.parse import urlparse
 
 try:
@@ -124,7 +124,7 @@ class SecurityGuard:
 
     def scan_and_redact(
         self, raw_text: str, actor: str = "recruit_agent", target_id: str = "cv_payload"
-    ) -> Tuple[str, Dict[str, Any]]:
+    ) -> tuple[str, dict[str, Any]]:
         if not raw_text:
             return "", {"tokens_estimated": 0, "redactions": 0, "prompt_hash": "empty", "status": "EMPTY"}
 
@@ -195,7 +195,7 @@ class SecurityGuard:
     def queue_outreach_for_approval(
         self, candidate_id: str, job_id: str, channel: str, recipient_masked: str, draft_message: str
     ) -> int:
-        now = datetime.now(timezone.utc).isoformat()
+        now = datetime.now(UTC).isoformat()
         with sqlite3.connect(self.db_path) as conn:
             cur = conn.execute(
                 """
@@ -212,7 +212,7 @@ class SecurityGuard:
 
     def review_outreach(self, queue_id: int, reviewer: str, approve: bool) -> str:
         new_status = "APPROVED_SENT" if approve else "REJECTED"
-        now = datetime.now(timezone.utc).isoformat()
+        now = datetime.now(UTC).isoformat()
         with sqlite3.connect(self.db_path) as conn:
             conn.execute(
                 """
@@ -229,7 +229,7 @@ class SecurityGuard:
     def log_event(
         self, actor: str, action: str, target_id: str, status: str, details: str = "", prompt_hash: str = ""
     ) -> None:
-        now = datetime.now(timezone.utc).isoformat()
+        now = datetime.now(UTC).isoformat()
         with sqlite3.connect(self.db_path) as conn:
             conn.execute(
                 """

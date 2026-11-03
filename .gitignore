@@ -32,3 +32,5 @@ venv/
 __pycache__/
 .env
 *.env
+
+self_heal_report.json

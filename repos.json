@@ -1,78 +1,667 @@
 {
-  "version": "2.0.0",
+  "version": "3.0.0-self-healing",
   "categories": {
     "identity_and_zerotrust": [
-      {"repo": "dani-garcia/vaultwarden", "role": "Self-hosted password and TOTP vault", "priority": "critical", "tier": 1},
-      {"repo": "goauthentik/authentik", "role": "Self-hosted SSO, OIDC, and MFA identity provider", "priority": "critical", "tier": 1},
-      {"repo": "pomerium/pomerium", "role": "Identity-aware zero-trust access proxy", "priority": "critical", "tier": 1},
-      {"repo": "tailscale/tailscale", "role": "WireGuard mesh VPN for private admin access", "priority": "critical", "tier": 1},
-      {"repo": "juanfont/headscale", "role": "Self-hosted Tailscale control server", "priority": "optional", "tier": 2},
-      {"repo": "authzed/spicedb", "role": "Fine-grained relationship-based access control", "priority": "high", "tier": 2},
-      {"repo": "openfga/openfga", "role": "Fine-grained authorization engine", "priority": "optional", "tier": 2},
-      {"repo": "cerbos/cerbos", "role": "Policy-as-code authorization layer for recruiter RBAC", "priority": "high", "tier": 2},
-      {"repo": "gravitational/teleport", "role": "Audited short-lived SSH and database access", "priority": "optional", "tier": 3}
+      {
+        "repo": "dani-garcia/vaultwarden",
+        "role": "Self-hosted password and TOTP vault",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "goauthentik/authentik",
+        "role": "Self-hosted SSO, OIDC, and MFA identity provider",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "pomerium/pomerium",
+        "role": "Identity-aware zero-trust access proxy",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "tailscale/tailscale",
+        "role": "WireGuard mesh VPN for private admin access",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "cerbos/cerbos",
+        "role": "Policy-as-code authorization layer for recruiter RBAC",
+        "priority": "high",
+        "tier": 2,
+        "relevancy_score": 97.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "authzed/spicedb",
+        "role": "Fine-grained relationship-based access control",
+        "priority": "high",
+        "tier": 2,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "juanfont/headscale",
+        "role": "Self-hosted Tailscale control server",
+        "priority": "optional",
+        "tier": 2,
+        "relevancy_score": 80.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "gravitational/teleport",
+        "role": "Audited short-lived SSH and database access",
+        "priority": "optional",
+        "tier": 3,
+        "relevancy_score": 78.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "openfga/openfga",
+        "role": "Fine-grained authorization engine",
+        "priority": "optional",
+        "tier": 2,
+        "relevancy_score": 75.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      }
     ],
     "secrets_and_encryption": [
-      {"repo": "Infisical/infisical", "role": "Centralized secrets management and runtime injection", "priority": "critical", "tier": 1},
-      {"repo": "Infisical/agent-vault", "role": "Credential broker isolating API keys from AI agents", "priority": "critical", "tier": 1},
-      {"repo": "getsops/sops", "role": "Encrypted YAML, JSON, and ENV configuration files", "priority": "high", "tier": 1},
-      {"repo": "FiloSottile/age", "role": "Modern file encryption backend for SOPS and backups", "priority": "high", "tier": 1},
-      {"repo": "openbao/openbao", "role": "Open-source Vault-compatible dynamic secrets engine", "priority": "optional", "tier": 3}
+      {
+        "repo": "Infisical/infisical",
+        "role": "Centralized secrets management and runtime injection",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "Infisical/agent-vault",
+        "role": "Credential broker isolating API keys from AI agents",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "getsops/sops",
+        "role": "Encrypted YAML, JSON, and ENV configuration files",
+        "priority": "high",
+        "tier": 1,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "FiloSottile/age",
+        "role": "Modern file encryption backend for SOPS and backups",
+        "priority": "high",
+        "tier": 1,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "openbao/openbao",
+        "role": "Open-source Vault-compatible dynamic secrets engine",
+        "priority": "optional",
+        "tier": 3,
+        "relevancy_score": 80.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      }
     ],
     "code_and_supply_chain": [
-      {"repo": "gitleaks/gitleaks", "role": "Pre-commit and CI secret scanner for Git history", "priority": "critical", "tier": 1},
-      {"repo": "trufflesecurity/trufflehog", "role": "Deep credential discovery and live key verification", "priority": "critical", "tier": 1},
-      {"repo": "Yelp/detect-secrets", "role": "Baseline secret detection for legacy repositories", "priority": "medium", "tier": 2},
-      {"repo": "aquasecurity/trivy", "role": "Container, filesystem, IaC, and vulnerability scanner", "priority": "critical", "tier": 1},
-      {"repo": "semgrep/semgrep", "role": "Static analysis for injection, SSRF, and auth flaws", "priority": "critical", "tier": 1},
-      {"repo": "PyCQA/bandit", "role": "Python AST security linter", "priority": "critical", "tier": 1},
-      {"repo": "pypa/pip-audit", "role": "Python dependency vulnerability scanner via PyPA/OSV", "priority": "critical", "tier": 1},
-      {"repo": "google/osv-scanner", "role": "Lockfile vulnerability scanner backed by OSV database", "priority": "high", "tier": 1},
-      {"repo": "anchore/syft", "role": "SBOM generator for images and filesystems", "priority": "high", "tier": 2},
-      {"repo": "anchore/grype", "role": "SBOM vulnerability analyzer", "priority": "high", "tier": 2},
-      {"repo": "step-security/harden-runner", "role": "GitHub Actions egress auditing and runtime security", "priority": "critical", "tier": 1},
-      {"repo": "woodruffw/zizmor", "role": "Static security analysis for GitHub Actions workflows", "priority": "high", "tier": 1},
-      {"repo": "renovatebot/renovate", "role": "Automated dependency and pinned digest updates", "priority": "high", "tier": 2},
-      {"repo": "ossf/scorecard", "role": "Supply-chain security posture scoring", "priority": "medium", "tier": 2},
-      {"repo": "sigstore/cosign", "role": "Container image signing and verification", "priority": "medium", "tier": 3}
+      {
+        "repo": "gitleaks/gitleaks",
+        "role": "Pre-commit and CI secret scanner for Git history",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "trufflesecurity/trufflehog",
+        "role": "Deep credential discovery and live key verification",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "semgrep/semgrep",
+        "role": "Static analysis for injection, SSRF, and auth flaws",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "PyCQA/bandit",
+        "role": "Python AST security linter",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "pypa/pip-audit",
+        "role": "Python dependency vulnerability scanner via PyPA/OSV",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "step-security/harden-runner",
+        "role": "GitHub Actions egress auditing and runtime security",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "aquasecurity/trivy",
+        "role": "Container, filesystem, IaC, and vulnerability scanner",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 98.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "google/osv-scanner",
+        "role": "Lockfile vulnerability scanner backed by OSV database",
+        "priority": "high",
+        "tier": 1,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "anchore/syft",
+        "role": "SBOM generator for images and filesystems",
+        "priority": "high",
+        "tier": 2,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "anchore/grype",
+        "role": "SBOM vulnerability analyzer",
+        "priority": "high",
+        "tier": 2,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "renovatebot/renovate",
+        "role": "Automated dependency and pinned digest updates",
+        "priority": "high",
+        "tier": 2,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "woodruffw/zizmor",
+        "role": "Static security analysis for GitHub Actions workflows",
+        "priority": "high",
+        "tier": 1,
+        "relevancy_score": 87.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "Yelp/detect-secrets",
+        "role": "Baseline secret detection for legacy repositories",
+        "priority": "medium",
+        "tier": 2,
+        "relevancy_score": 85.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "ossf/scorecard",
+        "role": "Supply-chain security posture scoring",
+        "priority": "medium",
+        "tier": 2,
+        "relevancy_score": 85.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "sigstore/cosign",
+        "role": "Container image signing and verification",
+        "priority": "medium",
+        "tier": 3,
+        "relevancy_score": 85.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      }
     ],
     "ai_guardrails_and_dlp": [
-      {"repo": "microsoft/presidio", "role": "Local PII detection and redaction before LLM inference", "priority": "critical", "tier": 1},
-      {"repo": "protectai/llm-guard", "role": "Prompt-injection, secret, and toxicity input/output scanner", "priority": "critical", "tier": 1},
-      {"repo": "promptfoo/promptfoo", "role": "CI red-teaming and regression testing for agent prompts", "priority": "high", "tier": 1},
-      {"repo": "guardrails-ai/guardrails", "role": "Structured LLM output validation and enforcement", "priority": "high", "tier": 2},
-      {"repo": "NVIDIA/NeMo-Guardrails", "role": "Programmable rails for conversational and tool-calling agents", "priority": "medium", "tier": 2},
-      {"repo": "NVIDIA/garak", "role": "Automated LLM vulnerability and jailbreak probe", "priority": "medium", "tier": 2},
-      {"repo": "Azure/PyRIT", "role": "Automated AI red-teaming framework", "priority": "optional", "tier": 3},
-      {"repo": "ljh-sh/token-actuary", "role": "Token counting, truncation, and pre-inference firewall", "priority": "medium", "tier": 2}
+      {
+        "repo": "microsoft/presidio",
+        "role": "Local PII detection and redaction before LLM inference",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "protectai/llm-guard",
+        "role": "Prompt-injection, secret, and toxicity input/output scanner",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "promptfoo/promptfoo",
+        "role": "CI red-teaming and regression testing for agent prompts",
+        "priority": "high",
+        "tier": 1,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "guardrails-ai/guardrails",
+        "role": "Structured LLM output validation and enforcement",
+        "priority": "high",
+        "tier": 2,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "NVIDIA/garak",
+        "role": "Automated LLM vulnerability and jailbreak probe",
+        "priority": "medium",
+        "tier": 2,
+        "relevancy_score": 80.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "Azure/PyRIT",
+        "role": "Automated AI red-teaming framework",
+        "priority": "optional",
+        "tier": 3,
+        "relevancy_score": 80.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "ljh-sh/token-actuary",
+        "role": "Token counting, truncation, and pre-inference firewall",
+        "priority": "medium",
+        "tier": 2,
+        "relevancy_score": 80.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "NVIDIA/NeMo-Guardrails",
+        "role": "Programmable rails for conversational and tool-calling agents",
+        "priority": "medium",
+        "tier": 2,
+        "relevancy_score": 75.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      }
     ],
     "data_and_container_hardening": [
-      {"repo": "pgaudit/pgaudit", "role": "Session and object audit logging for PostgreSQL", "priority": "high", "tier": 1},
-      {"repo": "Cisco-Talos/clamav", "role": "Antivirus scanning for uploaded candidate CVs", "priority": "high", "tier": 1},
-      {"repo": "restic/restic", "role": "Encrypted, deduplicated database and CV backups", "priority": "critical", "tier": 1},
-      {"repo": "bridgecrewio/checkov", "role": "Terraform, Docker, and Kubernetes misconfiguration scanner", "priority": "high", "tier": 2},
-      {"repo": "hadolint/hadolint", "role": "Dockerfile best-practice and security linter", "priority": "high", "tier": 2},
-      {"repo": "goodwithtech/dockle", "role": "Container image security linter", "priority": "medium", "tier": 2},
-      {"repo": "CISOfy/lynis", "role": "Linux host hardening and compliance auditor", "priority": "medium", "tier": 2}
+      {
+        "repo": "pgaudit/pgaudit",
+        "role": "Session and object audit logging for PostgreSQL",
+        "priority": "high",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "restic/restic",
+        "role": "Encrypted, deduplicated database and CV backups",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "Cisco-Talos/clamav",
+        "role": "Antivirus scanning for uploaded candidate CVs",
+        "priority": "high",
+        "tier": 1,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "bridgecrewio/checkov",
+        "role": "Terraform, Docker, and Kubernetes misconfiguration scanner",
+        "priority": "high",
+        "tier": 2,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "hadolint/hadolint",
+        "role": "Dockerfile best-practice and security linter",
+        "priority": "high",
+        "tier": 2,
+        "relevancy_score": 87.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "CISOfy/lynis",
+        "role": "Linux host hardening and compliance auditor",
+        "priority": "medium",
+        "tier": 2,
+        "relevancy_score": 83.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "goodwithtech/dockle",
+        "role": "Container image security linter",
+        "priority": "medium",
+        "tier": 2,
+        "relevancy_score": 75.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      }
     ],
     "detection_siem_and_edge": [
-      {"repo": "wazuh/wazuh", "role": "Open-source SIEM and XDR for host and container monitoring", "priority": "high", "tier": 2},
-      {"repo": "falcosecurity/falco", "role": "Runtime container threat and syscall detection", "priority": "high", "tier": 2},
-      {"repo": "crowdsecurity/crowdsec", "role": "Collaborative IP reputation and brute-force blocker", "priority": "high", "tier": 1},
-      {"repo": "caddyserver/caddy", "role": "Automatic HTTPS reverse proxy", "priority": "high", "tier": 1},
-      {"repo": "corazawaf/coraza", "role": "OWASP-compatible Web Application Firewall for Caddy", "priority": "high", "tier": 2},
-      {"repo": "coreruleset/coreruleset", "role": "OWASP Core Rule Set for Coraza and ModSecurity", "priority": "high", "tier": 2},
-      {"repo": "zaproxy/zaproxy", "role": "Dynamic application security testing for web and APIs", "priority": "medium", "tier": 2},
-      {"repo": "projectdiscovery/nuclei", "role": "Template-based endpoint vulnerability scanner", "priority": "medium", "tier": 2},
-      {"repo": "louislam/uptime-kuma", "role": "Self-hosted uptime monitoring and alerting", "priority": "high", "tier": 1}
+      {
+        "repo": "falcosecurity/falco",
+        "role": "Runtime container threat and syscall detection",
+        "priority": "high",
+        "tier": 2,
+        "relevancy_score": 97.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "wazuh/wazuh",
+        "role": "Open-source SIEM and XDR for host and container monitoring",
+        "priority": "high",
+        "tier": 2,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "crowdsecurity/crowdsec",
+        "role": "Collaborative IP reputation and brute-force blocker",
+        "priority": "high",
+        "tier": 1,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "caddyserver/caddy",
+        "role": "Automatic HTTPS reverse proxy",
+        "priority": "high",
+        "tier": 1,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "corazawaf/coraza",
+        "role": "OWASP-compatible Web Application Firewall for Caddy",
+        "priority": "high",
+        "tier": 2,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "coreruleset/coreruleset",
+        "role": "OWASP Core Rule Set for Coraza and ModSecurity",
+        "priority": "high",
+        "tier": 2,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "louislam/uptime-kuma",
+        "role": "Self-hosted uptime monitoring and alerting",
+        "priority": "high",
+        "tier": 1,
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "zaproxy/zaproxy",
+        "role": "Dynamic application security testing for web and APIs",
+        "priority": "medium",
+        "tier": 2,
+        "relevancy_score": 75.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "projectdiscovery/nuclei",
+        "role": "Template-based endpoint vulnerability scanner",
+        "priority": "medium",
+        "tier": 2,
+        "relevancy_score": 75.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      }
     ],
     "recruitment_ai_core_extra": [
-      {"repo": "BerriAI/litellm", "role": "Unified LLM proxy with multi-provider fallback routing", "priority": "critical", "tier": 1},
-      {"repo": "DS4SD/docling", "role": "Local offline resume PDF/DOCX extraction to Markdown", "priority": "critical", "tier": 1},
-      {"repo": "langfuse/langfuse", "role": "Self-hosted LLM trace, cost, and prompt audit logging", "priority": "high", "tier": 1},
-      {"repo": "qdrant/qdrant", "role": "Vector similarity engine for candidate-job matching", "priority": "high", "tier": 2},
-      {"repo": "PrefectHQ/prefect", "role": "Workflow orchestration for scheduled job/CV pipelines", "priority": "medium", "tier": 2},
-      {"repo": "minio/minio", "role": "Private S3-compatible object storage for encrypted CVs", "priority": "high", "tier": 1}
+      {
+        "repo": "DS4SD/docling",
+        "role": "Local offline resume PDF/DOCX extraction to Markdown",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "langfuse/langfuse",
+        "role": "Self-hosted LLM trace, cost, and prompt audit logging",
+        "priority": "high",
+        "tier": 1,
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "BerriAI/litellm",
+        "role": "Unified LLM proxy with multi-provider fallback routing",
+        "priority": "critical",
+        "tier": 1,
+        "relevancy_score": 95.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "qdrant/qdrant",
+        "role": "Vector similarity engine for candidate-job matching",
+        "priority": "high",
+        "tier": 2,
+        "relevancy_score": 87.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "minio/minio",
+        "role": "Private S3-compatible object storage for encrypted CVs",
+        "priority": "high",
+        "tier": 1,
+        "relevancy_score": 87.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "PrefectHQ/prefect",
+        "role": "Workflow orchestration for scheduled job/CV pipelines",
+        "priority": "medium",
+        "tier": 2,
+        "relevancy_score": 80.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      }
+    ],
+    "accessibility_and_self_healing": [
+      {
+        "repo": "dequelabs/axe-core",
+        "role": "Automated WCAG 2.1/2.2 accessibility engine for web & Streamlit UI auditing",
+        "priority": "critical",
+        "tier": 1,
+        "keywords": [
+          "streamlit",
+          "dashboard",
+          "ui",
+          "html"
+        ],
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "Textualize/rich",
+        "role": "High-contrast terminal tables, structured logs, and accessible tracebacks",
+        "priority": "critical",
+        "tier": 1,
+        "keywords": [
+          "logging",
+          "print",
+          "console"
+        ],
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "jd/tenacity",
+        "role": "Self-healing exponential backoff and retry engine for API & DB resilience",
+        "priority": "critical",
+        "tier": 1,
+        "keywords": [
+          "requests",
+          "http",
+          "sqlite3",
+          "api"
+        ],
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "astral-sh/ruff",
+        "role": "Ultra-fast Rust-based Python linter and autonomous code auto-fixer",
+        "priority": "critical",
+        "tier": 1,
+        "keywords": [
+          "ast",
+          "python",
+          "lint"
+        ],
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "astral-sh/uv",
+        "role": "Self-healing deterministic Python package and virtual environment resolver",
+        "priority": "critical",
+        "tier": 1,
+        "keywords": [
+          "pip",
+          "venv",
+          "requirements"
+        ],
+        "relevancy_score": 100.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "pa11y/pa11y",
+        "role": "Automated CLI accessibility pal & continuous WCAG regression runner",
+        "priority": "high",
+        "tier": 1,
+        "keywords": [
+          "streamlit",
+          "dashboard",
+          "ci"
+        ],
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "Textualize/textual",
+        "role": "Keyboard-first, screen-reader friendly TUI framework for low-bandwidth/SSH accessibility",
+        "priority": "high",
+        "tier": 1,
+        "keywords": [
+          "cli",
+          "terminal",
+          "console"
+        ],
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      },
+      {
+        "repo": "open-telemetry/opentelemetry-python",
+        "role": "Distributed tracing and observability across agent and DB workflows",
+        "priority": "high",
+        "tier": 2,
+        "keywords": [
+          "logging",
+          "trace",
+          "metrics"
+        ],
+        "relevancy_score": 92.0,
+        "stars_verified": 15000,
+        "last_checked_utc": "2026-11-03T08:22:43.397117+00:00"
+      }
     ]
-  }
+  },
+  "last_self_heal_utc": "2026-11-03T08:22:43.397117+00:00"
 }

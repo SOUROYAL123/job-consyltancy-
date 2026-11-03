@@ -5,6 +5,7 @@ import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+
 import requests
 
 from security_guard import SecurityGuard
@@ -18,57 +19,123 @@ class RecruitAgent:
         self.db_path = db_path
         self.candidates_file = Path(candidates_file)
         self.guard = SecurityGuard(db_path=self.db_path)
-        self._init_db()
+        self._init_and_heal_db_schema()
         self._seed_defaults_if_empty()
 
-    def _init_db(self) -> None:
+    @staticmethod
+    def _ensure_columns(conn: sqlite3.Connection, table_name: str, required_columns: Dict[str, str]) -> None:
+        """Self-healing SQLite migrator: inspects existing table columns and adds any missing ones automatically."""
+        existing = {
+            row[1] for row in conn.execute(f"PRAGMA table_info({table_name})").fetchall()
+        }
+        for col_name, col_def in required_columns.items():
+            if col_name not in existing:
+                conn.execute(f"ALTER TABLE {table_name} ADD COLUMN {col_name} {col_def}")
+
+    def _init_and_heal_db_schema(self) -> None:
         with sqlite3.connect(self.db_path) as conn:
             conn.execute(
                 """
                 CREATE TABLE IF NOT EXISTS jobs (
                     job_id TEXT PRIMARY KEY,
-                    title TEXT NOT NULL,
-                    company TEXT NOT NULL,
-                    location TEXT NOT NULL,
-                    required_skills TEXT NOT NULL,
+                    title TEXT NOT NULL DEFAULT 'Open Role',
+                    company TEXT NOT NULL DEFAULT 'Consultancy Client',
+                    location TEXT NOT NULL DEFAULT 'Remote India',
+                    required_skills TEXT NOT NULL DEFAULT '["Python"]',
                     min_exp_years REAL DEFAULT 0,
                     status TEXT DEFAULT 'OPEN',
-                    created_utc TEXT NOT NULL
+                    created_utc TEXT NOT NULL DEFAULT ''
                 )
                 """
             )
+            self._ensure_columns(
+                conn,
+                "jobs",
+                {
+                    "job_id": "TEXT",
+                    "title": "TEXT NOT NULL DEFAULT 'Open Role'",
+                    "company": "TEXT NOT NULL DEFAULT 'Consultancy Client'",
+                    "location": "TEXT NOT NULL DEFAULT 'Remote India'",
+                    "required_skills": "TEXT NOT NULL DEFAULT '[\"Python\"]'",
+                    "min_exp_years": "REAL DEFAULT 0",
+                    "status": "TEXT DEFAULT 'OPEN'",
+                    "created_utc": "TEXT NOT NULL DEFAULT ''",
+                },
+            )
+            # Ensure any legacy rows with NULL status or required_skills are healed
+            conn.execute("UPDATE jobs SET status = 'OPEN' WHERE status IS NULL OR status = ''")
+            conn.execute("UPDATE jobs SET required_skills = '[\"Python\", \"AWS\", \"SQLite\"]' WHERE required_skills IS NULL OR required_skills = ''")
+            conn.execute("UPDATE jobs SET min_exp_years = 1.0 WHERE min_exp_years IS NULL")
+            conn.execute("UPDATE jobs SET job_id = 'JOB-' || rowid WHERE job_id IS NULL OR job_id = ''")
+
             conn.execute(
                 """
                 CREATE TABLE IF NOT EXISTS candidates (
                     candidate_id TEXT PRIMARY KEY,
-                    full_name TEXT NOT NULL,
-                    email_masked TEXT NOT NULL,
-                    phone_masked TEXT NOT NULL,
-                    role_focus TEXT NOT NULL,
+                    full_name TEXT NOT NULL DEFAULT 'Candidate',
+                    email_masked TEXT NOT NULL DEFAULT '***@***',
+                    phone_masked TEXT NOT NULL DEFAULT '******',
+                    role_focus TEXT NOT NULL DEFAULT 'Engineer',
                     exp_years REAL DEFAULT 0,
-                    skills TEXT NOT NULL,
-                    raw_summary TEXT NOT NULL,
-                    redacted_summary TEXT NOT NULL,
-                    updated_utc TEXT NOT NULL
+                    skills TEXT NOT NULL DEFAULT '["Python"]',
+                    raw_summary TEXT NOT NULL DEFAULT '',
+                    redacted_summary TEXT NOT NULL DEFAULT '',
+                    updated_utc TEXT NOT NULL DEFAULT ''
                 )
                 """
             )
+            self._ensure_columns(
+                conn,
+                "candidates",
+                {
+                    "candidate_id": "TEXT",
+                    "full_name": "TEXT NOT NULL DEFAULT 'Candidate'",
+                    "email_masked": "TEXT NOT NULL DEFAULT '***@***'",
+                    "phone_masked": "TEXT NOT NULL DEFAULT '******'",
+                    "role_focus": "TEXT NOT NULL DEFAULT 'Engineer'",
+                    "exp_years": "REAL DEFAULT 0",
+                    "skills": "TEXT NOT NULL DEFAULT '[\"Python\"]'",
+                    "raw_summary": "TEXT NOT NULL DEFAULT ''",
+                    "redacted_summary": "TEXT NOT NULL DEFAULT ''",
+                    "updated_utc": "TEXT NOT NULL DEFAULT ''",
+                },
+            )
+            conn.execute("UPDATE candidates SET candidate_id = 'CAND-' || rowid WHERE candidate_id IS NULL OR candidate_id = ''")
+            conn.execute("UPDATE candidates SET skills = '[\"Python\", \"AWS\"]' WHERE skills IS NULL OR skills = ''")
+            conn.execute("UPDATE candidates SET exp_years = 1.0 WHERE exp_years IS NULL")
+            conn.execute("UPDATE candidates SET redacted_summary = 'Sanitized profile' WHERE redacted_summary IS NULL")
+
             conn.execute(
                 """
                 CREATE TABLE IF NOT EXISTS candidate_matches (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     candidate_id TEXT NOT NULL,
                     job_id TEXT NOT NULL,
-                    score INTEGER NOT NULL,
-                    matched_skills TEXT NOT NULL,
-                    missing_skills TEXT NOT NULL,
-                    reasoning TEXT NOT NULL,
-                    model_used TEXT NOT NULL,
-                    prompt_hash TEXT NOT NULL,
-                    scored_utc TEXT NOT NULL,
+                    score INTEGER NOT NULL DEFAULT 0,
+                    matched_skills TEXT NOT NULL DEFAULT '[]',
+                    missing_skills TEXT NOT NULL DEFAULT '[]',
+                    reasoning TEXT NOT NULL DEFAULT '',
+                    model_used TEXT NOT NULL DEFAULT 'local-deterministic-scorer',
+                    prompt_hash TEXT NOT NULL DEFAULT '',
+                    scored_utc TEXT NOT NULL DEFAULT '',
                     UNIQUE(candidate_id, job_id)
                 )
                 """
+            )
+            self._ensure_columns(
+                conn,
+                "candidate_matches",
+                {
+                    "candidate_id": "TEXT NOT NULL DEFAULT ''",
+                    "job_id": "TEXT NOT NULL DEFAULT ''",
+                    "score": "INTEGER NOT NULL DEFAULT 0",
+                    "matched_skills": "TEXT NOT NULL DEFAULT '[]'",
+                    "missing_skills": "TEXT NOT NULL DEFAULT '[]'",
+                    "reasoning": "TEXT NOT NULL DEFAULT ''",
+                    "model_used": "TEXT NOT NULL DEFAULT 'local-deterministic-scorer'",
+                    "prompt_hash": "TEXT NOT NULL DEFAULT ''",
+                    "scored_utc": "TEXT NOT NULL DEFAULT ''",
+                },
             )
             conn.commit()
 
@@ -100,7 +167,7 @@ class RecruitAgent:
                     ),
                 ]
                 conn.executemany(
-                    "INSERT INTO jobs VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                    "INSERT INTO jobs (job_id, title, company, location, required_skills, min_exp_years, status, created_utc) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                     sample_jobs,
                 )
                 conn.commit()
@@ -110,7 +177,8 @@ class RecruitAgent:
                 raw_data = json.loads(self.candidates_file.read_text(encoding="utf-8"))
                 if isinstance(raw_data, list):
                     for item in raw_data:
-                        self.ingest_candidate(item)
+                        if isinstance(item, dict):
+                            self.ingest_candidate(item)
             except Exception as exc:
                 self.guard.log_event("recruit_agent", "CANDIDATE_JSON_LOAD_WARN", str(self.candidates_file), "WARN", str(exc))
 
@@ -154,16 +222,31 @@ class RecruitAgent:
         digits = re.sub(r"\D", "", phone)
         return f"******{digits[-4:]}" if len(digits) >= 4 else "******"
 
+    @staticmethod
+    def _parse_skills_safe(raw_val: Any) -> List[str]:
+        if isinstance(raw_val, list):
+            return [str(x).strip() for x in raw_val if str(x).strip()]
+        if isinstance(raw_val, str):
+            try:
+                parsed = json.loads(raw_val)
+                if isinstance(parsed, list):
+                    return [str(x).strip() for x in parsed if str(x).strip()]
+            except Exception:
+                pass
+            return [s.strip() for s in raw_val.split(",") if s.strip()]
+        return ["Python"]
+
     def ingest_candidate(self, record: Dict[str, Any]) -> str:
-        cid = str(record.get("candidate_id") or f"CAND-{int(datetime.now().timestamp())}")
+        cid = str(record.get("candidate_id") or record.get("id") or f"CAND-{int(datetime.now().timestamp())}")
         full_name = str(record.get("full_name") or record.get("name") or "Redacted Candidate")
         email = str(record.get("email") or "unknown@example.com")
         phone = str(record.get("phone") or "0000000000")
         role_focus = str(record.get("role_focus") or record.get("role") or "General Engineer")
-        exp_years = float(record.get("exp_years") or 1.0)
-        skills = record.get("skills") or []
-        if isinstance(skills, str):
-            skills = [s.strip() for s in skills.split(",") if s.strip()]
+        try:
+            exp_years = float(record.get("exp_years") or record.get("experience") or 1.0)
+        except Exception:
+            exp_years = 1.0
+        skills = self._parse_skills_safe(record.get("skills") or ["Python"])
         raw_summary = str(record.get("summary") or record.get("raw_summary") or " ".join(skills))
 
         redacted_summary, _ = self.guard.scan_and_redact(raw_summary, actor="ingest_candidate", target_id=cid)
@@ -272,26 +355,37 @@ class RecruitAgent:
             candidates = conn.execute("SELECT * FROM candidates").fetchall()
 
         for job in jobs:
-            req_skills = [s.lower() for s in json.loads(job["required_skills"])]
+            job_id = str(job["job_id"] or "JOB-101")
+            job_title = str(job["title"] or "Engineering Role")
+            job_company = str(job["company"] or "Consultancy Client")
+            job_location = str(job["location"] or "Remote India")
+            req_skills_raw = self._parse_skills_safe(job["required_skills"])
+            req_skills = [s.lower() for s in req_skills_raw]
+            min_exp = float(job["min_exp_years"] or 0.0)
+
             for cand in candidates:
-                cand_skills_raw = json.loads(cand["skills"])
+                cand_id = str(cand["candidate_id"] or "CAND-001")
+                cand_name = str(cand["full_name"] or "Candidate")
+                cand_role = str(cand["role_focus"] or "Engineer")
+                cand_exp = float(cand["exp_years"] or 0.0)
+                cand_skills_raw = self._parse_skills_safe(cand["skills"])
                 cand_skills_lower = [s.lower() for s in cand_skills_raw]
 
                 matched = [s for s in cand_skills_raw if s.lower() in req_skills]
-                missing = [s for s in json.loads(job["required_skills"]) if s.lower() not in cand_skills_lower]
+                missing = [s for s in req_skills_raw if s.lower() not in cand_skills_lower]
 
                 skill_ratio = len(matched) / max(1, len(req_skills))
-                exp_bonus = 15 if cand["exp_years"] >= job["min_exp_years"] else 5
+                exp_bonus = 15 if cand_exp >= min_exp else 5
                 deterministic_score = min(100, int(skill_ratio * 85) + exp_bonus)
 
                 raw_prompt = (
-                    f"Job Title: {job['title']}\nRequired Skills: {', '.join(req_skills)}\n"
-                    f"Candidate Role: {cand['role_focus']}\nCandidate Exp: {cand['exp_years']} yrs\n"
+                    f"Job Title: {job_title}\nRequired Skills: {', '.join(req_skills)}\n"
+                    f"Candidate Role: {cand_role}\nCandidate Exp: {cand_exp} yrs\n"
                     f"Candidate Skills: {', '.join(cand_skills_raw)}\n"
                     f"Sanitized Summary: {cand['redacted_summary']}"
                 )
                 sanitized_prompt, scan_meta = self.guard.scan_and_redact(
-                    raw_prompt, actor="recruit_agent", target_id=f"{cand['candidate_id']}_{job['job_id']}"
+                    raw_prompt, actor="recruit_agent", target_id=f"{cand_id}_{job_id}"
                 )
 
                 llm_eval = self._call_llm_gateway(sanitized_prompt)
@@ -303,29 +397,26 @@ class RecruitAgent:
                     final_score = deterministic_score
                     reasoning = (
                         f"Matched {len(matched)}/{len(req_skills)} core skills "
-                        f"({', '.join(matched) if matched else 'none'}); {cand['exp_years']}y experience."
+                        f"({', '.join(matched) if matched else 'none'}); {cand_exp}y experience."
                     )
                     model_used = "local-deterministic-scorer"
 
                 now = datetime.now(timezone.utc).isoformat()
                 with sqlite3.connect(self.db_path) as conn:
+                    # Clean up any duplicate rows if table existed prior to UNIQUE constraint
+                    conn.execute(
+                        "DELETE FROM candidate_matches WHERE candidate_id = ? AND job_id = ?",
+                        (cand_id, job_id),
+                    )
                     conn.execute(
                         """
                         INSERT INTO candidate_matches
                         (candidate_id, job_id, score, matched_skills, missing_skills, reasoning, model_used, prompt_hash, scored_utc)
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-                        ON CONFLICT(candidate_id, job_id) DO UPDATE SET
-                            score=excluded.score,
-                            matched_skills=excluded.matched_skills,
-                            missing_skills=excluded.missing_skills,
-                            reasoning=excluded.reasoning,
-                            model_used=excluded.model_used,
-                            prompt_hash=excluded.prompt_hash,
-                            scored_utc=excluded.scored_utc
                         """,
                         (
-                            cand["candidate_id"],
-                            job["job_id"],
+                            cand_id,
+                            job_id,
                             final_score,
                             json.dumps(matched),
                             json.dumps(missing),
@@ -339,12 +430,12 @@ class RecruitAgent:
 
                 if final_score >= 75:
                     draft = (
-                        f"Hi {cand['full_name']}, your profile matched {final_score}% for {job['title']} "
-                        f"({job['company']} - {job['location']}). Reply YES to opt in to interview scheduling."
+                        f"Hi {cand_name}, your profile matched {final_score}% for {job_title} "
+                        f"({job_company} - {job_location}). Reply YES to opt in to interview scheduling."
                     )
                     self.guard.queue_outreach_for_approval(
-                        candidate_id=cand["candidate_id"],
-                        job_id=job["job_id"],
+                        candidate_id=cand_id,
+                        job_id=job_id,
                         channel="WhatsApp/Email",
                         recipient_masked=f"{cand['email_masked']} / {cand['phone_masked']}",
                         draft_message=draft,
@@ -352,8 +443,8 @@ class RecruitAgent:
 
                 results.append(
                     {
-                        "candidate_id": cand["candidate_id"],
-                        "job_id": job["job_id"],
+                        "candidate_id": cand_id,
+                        "job_id": job_id,
                         "score": final_score,
                         "model_used": model_used,
                     }
