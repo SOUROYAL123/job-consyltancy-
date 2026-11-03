@@ -1,506 +1,78 @@
-[
-  {
-    "name": "Supabase",
-    "repo": "supabase/supabase",
-    "layer": "Core platform",
-    "phase": 1,
-    "mode": "service",
-    "note": "Auth, Postgres, storage"
-  },
-  {
-    "name": "n8n",
-    "repo": "n8n-io/n8n",
-    "layer": "Core platform",
-    "phase": 1,
-    "mode": "service",
-    "note": "Workflow glue"
-  },
-  {
-    "name": "Streamlit",
-    "repo": "streamlit/streamlit",
-    "layer": "Recruiter dashboard",
-    "phase": 1,
-    "mode": "tool",
-    "note": ""
-  },
-  {
-    "name": "Metabase",
-    "repo": "metabase/metabase",
-    "layer": "Analytics & reporting",
-    "phase": 2,
-    "mode": "service",
-    "note": "BI over Supabase"
-  },
-  {
-    "name": "PostHog",
-    "repo": "PostHog/posthog",
-    "layer": "Analytics & reporting",
-    "phase": 3,
-    "mode": "service",
-    "note": "Product analytics"
-  },
-  {
-    "name": "Jobicy / ATS feeds",
-    "repo": "",
-    "layer": "Job feeds",
-    "phase": 1,
-    "mode": "reference",
-    "note": "API/feeds, not a repo; set if you have one"
-  },
-  {
-    "name": "Resume-Matcher",
-    "repo": "srbhr/Resume-Matcher",
-    "layer": "Candidate intake & parsing",
-    "phase": 1,
-    "mode": "clone",
-    "note": ""
-  },
-  {
-    "name": "OpenResume",
-    "repo": "xitanggg/open-resume",
-    "layer": "Candidate intake & parsing",
-    "phase": 2,
-    "mode": "reference",
-    "note": "Resume builder/parser"
-  },
-  {
-    "name": "Docling",
-    "repo": "docling-project/docling",
-    "layer": "Candidate intake & parsing",
-    "phase": 2,
-    "mode": "tool",
-    "note": "PDF/DOCX to structured text"
-  },
-  {
-    "name": "Unstructured",
-    "repo": "Unstructured-IO/unstructured",
-    "layer": "Candidate intake & parsing",
-    "phase": 2,
-    "mode": "tool",
-    "note": ""
-  },
-  {
-    "name": "spaCy",
-    "repo": "explosion/spaCy",
-    "layer": "Candidate intake & parsing",
-    "phase": 2,
-    "mode": "tool",
-    "note": "Skill/entity extraction"
-  },
-  {
-    "name": "Ollama",
-    "repo": "ollama/ollama",
-    "layer": "AI matching",
-    "phase": 1,
-    "mode": "service",
-    "note": "Local LLM"
-  },
-  {
-    "name": "sentence-transformers",
-    "repo": "UKPLab/sentence-transformers",
-    "layer": "AI matching",
-    "phase": 2,
-    "mode": "tool",
-    "note": "Embeddings"
-  },
-  {
-    "name": "pgvector",
-    "repo": "pgvector/pgvector",
-    "layer": "AI matching",
-    "phase": 2,
-    "mode": "service",
-    "note": "Vectors inside Postgres"
-  },
-  {
-    "name": "Qdrant",
-    "repo": "qdrant/qdrant",
-    "layer": "AI matching",
-    "phase": 3,
-    "mode": "service",
-    "note": "Only if pgvector is not enough"
-  },
-  {
-    "name": "LlamaIndex",
-    "repo": "run-llama/llama_index",
-    "layer": "AI matching",
-    "phase": 3,
-    "mode": "tool",
-    "note": ""
-  },
-  {
-    "name": "OmniRoute",
-    "repo": "diegosouzapw/OmniRoute",
-    "layer": "LLM gateway",
-    "phase": 2,
-    "mode": "service",
-    "note": "Pools free tiers; NON-candidate data only. Check licence + provider ToS"
-  },
-  {
-    "name": "FreeLLMAPI",
-    "repo": "platoba/freellmapi",
-    "layer": "LLM gateway",
-    "phase": 2,
-    "mode": "service",
-    "note": "Verify owner/name: several repos use this name. NON-candidate data only"
-  },
-  {
-    "name": "LiteLLM",
-    "repo": "BerriAI/litellm",
-    "layer": "LLM gateway",
-    "phase": 2,
-    "mode": "service",
-    "note": "Mature gateway with budgets and logging"
-  },
-  {
-    "name": "Promptfoo",
-    "repo": "promptfoo/promptfoo",
-    "layer": "AI evaluation & fairness",
-    "phase": 2,
-    "mode": "tool",
-    "note": "Test prompts on sample CVs"
-  },
-  {
-    "name": "Langfuse",
-    "repo": "langfuse/langfuse",
-    "layer": "AI evaluation & fairness",
-    "phase": 2,
-    "mode": "service",
-    "note": "Trace prompts, cost, feedback"
-  },
-  {
-    "name": "Fairlearn",
-    "repo": "fairlearn/fairlearn",
-    "layer": "AI evaluation & fairness",
-    "phase": 3,
-    "mode": "tool",
-    "note": "Bias metrics"
-  },
-  {
-    "name": "Twenty",
-    "repo": "twentyhq/twenty",
-    "layer": "Employer CRM",
-    "phase": 2,
-    "mode": "service",
-    "note": "Open-source CRM"
-  },
-  {
-    "name": "OpenCATS",
-    "repo": "opencats/OpenCATS",
-    "layer": "Employer CRM",
-    "phase": 3,
-    "mode": "reference",
-    "note": "Classic open ATS"
-  },
-  {
-    "name": "FreeATS",
-    "repo": "",
-    "layer": "Employer CRM",
-    "phase": 3,
-    "mode": "reference",
-    "note": "Owner unconfirmed; autorun will suggest the repo"
-  },
-  {
-    "name": "JobSpy",
-    "repo": "",
-    "layer": "Job feeds",
-    "phase": 1,
-    "mode": "tool",
-    "note": "Job-board scraper; owner unconfirmed, autorun will suggest the repo"
-  },
-  {
-    "name": "Reqcore",
-    "repo": "reqcore-inc/reqcore-app",
-    "layer": "Employer CRM",
-    "phase": 3,
-    "mode": "reference",
-    "note": "Newer open-source ATS; verify maturity"
-  },
-  {
-    "name": "SpotAxis",
-    "repo": "Assystant/SpotAxis",
-    "layer": "Employer CRM",
-    "phase": 3,
-    "mode": "reference",
-    "note": "Django ATS / job portal; check activity"
-  },
-  {
-    "name": "Cal.com",
-    "repo": "calcom/cal.com",
-    "layer": "Interview scheduling",
-    "phase": 1,
-    "mode": "service",
-    "note": ""
-  },
-  {
-    "name": "Chatwoot",
-    "repo": "chatwoot/chatwoot",
-    "layer": "Communication inbox",
-    "phase": 2,
-    "mode": "service",
-    "note": "Shared inbox, WhatsApp/email"
-  },
-  {
-    "name": "Listmonk",
-    "repo": "knadh/listmonk",
-    "layer": "Communication inbox",
-    "phase": 2,
-    "mode": "service",
-    "note": "Job-alert newsletters"
-  },
-  {
-    "name": "Mautic",
-    "repo": "mautic/mautic",
-    "layer": "Communication inbox",
-    "phase": 3,
-    "mode": "service",
-    "note": "Marketing automation"
-  },
-  {
-    "name": "Documenso",
-    "repo": "documenso/documenso",
-    "layer": "Agreements & e-signatures",
-    "phase": 1,
-    "mode": "service",
-    "note": ""
-  },
-  {
-    "name": "Invoice Ninja",
-    "repo": "invoiceninja/invoiceninja",
-    "layer": "Invoicing & payments",
-    "phase": 1,
-    "mode": "service",
-    "note": ""
-  },
-  {
-    "name": "Scrapy",
-    "repo": "scrapy/scrapy",
-    "layer": "Market research",
-    "phase": 2,
-    "mode": "tool",
-    "note": ""
-  },
-  {
-    "name": "Playwright (Python)",
-    "repo": "microsoft/playwright-python",
-    "layer": "Market research",
-    "phase": 2,
-    "mode": "tool",
-    "note": ""
-  },
-  {
-    "name": "Crawlee (Python)",
-    "repo": "apify/crawlee-python",
-    "layer": "Market research",
-    "phase": 3,
-    "mode": "tool",
-    "note": ""
-  },
-  {
-    "name": "Uptime Kuma",
-    "repo": "louislam/uptime-kuma",
-    "layer": "Security & monitoring",
-    "phase": 2,
-    "mode": "service",
-    "note": ""
-  },
-  {
-    "name": "restic",
-    "repo": "restic/restic",
-    "layer": "Security & monitoring",
-    "phase": 2,
-    "mode": "tool",
-    "note": "Encrypted backups"
-  },
-  {
-    "name": "Grafana",
-    "repo": "grafana/grafana",
-    "layer": "Security & monitoring",
-    "phase": 3,
-    "mode": "service",
-    "note": ""
-  },
-  {
-    "name": "Sentry",
-    "repo": "getsentry/sentry",
-    "layer": "Security & monitoring",
-    "phase": 3,
-    "mode": "service",
-    "note": ""
-  },
-  {
-    "name": "Keycloak",
-    "repo": "keycloak/keycloak",
-    "layer": "Security & monitoring",
-    "phase": 3,
-    "mode": "service",
-    "note": "SSO for client portal"
-  },
-  {
-    "name": "Presidio",
-    "repo": "microsoft/presidio",
-    "layer": "Compliance & privacy",
-    "phase": 2,
-    "mode": "tool",
-    "note": "PII redaction before sending CVs to AI"
-  },
-  {
-    "name": "KeePassXC",
-    "repo": "keepassxreboot/keepassxc",
-    "layer": "Personal & dev security",
-    "phase": 1,
-    "mode": "tool",
-    "note": "Offline password manager"
-  },
-  {
-    "name": "Bitwarden clients",
-    "repo": "bitwarden/clients",
-    "layer": "Personal & dev security",
-    "phase": 1,
-    "mode": "tool",
-    "note": "Password manager apps"
-  },
-  {
-    "name": "Aegis Authenticator",
-    "repo": "beemdevelopment/Aegis",
-    "layer": "Personal & dev security",
-    "phase": 1,
-    "mode": "tool",
-    "note": "Android 2FA app"
-  },
-  {
-    "name": "Ente (Auth)",
-    "repo": "ente-io/ente",
-    "layer": "Personal & dev security",
-    "phase": 2,
-    "mode": "tool",
-    "note": "Encrypted 2FA codes with backup"
-  },
-  {
-    "name": "AdGuard Home",
-    "repo": "AdguardTeam/AdGuardHome",
-    "layer": "Personal & dev security",
-    "phase": 2,
-    "mode": "service",
-    "note": "Network-wide DNS filtering"
-  },
-  {
-    "name": "Pi-hole",
-    "repo": "pi-hole/pi-hole",
-    "layer": "Personal & dev security",
-    "phase": 2,
-    "mode": "service",
-    "note": "DNS filtering alternative"
-  },
-  {
-    "name": "uBlock Origin",
-    "repo": "gorhill/uBlock",
-    "layer": "Personal & dev security",
-    "phase": 1,
-    "mode": "tool",
-    "note": "Browser protection"
-  },
-  {
-    "name": "VeraCrypt",
-    "repo": "veracrypt/VeraCrypt",
-    "layer": "Personal & dev security",
-    "phase": 2,
-    "mode": "tool",
-    "note": "Disk/file encryption"
-  },
-  {
-    "name": "Cryptomator",
-    "repo": "cryptomator/cryptomator",
-    "layer": "Personal & dev security",
-    "phase": 2,
-    "mode": "tool",
-    "note": "Encrypted cloud folders"
-  },
-  {
-    "name": "Gitleaks",
-    "repo": "gitleaks/gitleaks",
-    "layer": "Personal & dev security",
-    "phase": 1,
-    "mode": "tool",
-    "note": "Stop secrets leaking into git"
-  },
-  {
-    "name": "TruffleHog",
-    "repo": "trufflesecurity/trufflehog",
-    "layer": "Personal & dev security",
-    "phase": 2,
-    "mode": "tool",
-    "note": "Secret scanning"
-  },
-  {
-    "name": "Wazuh",
-    "repo": "wazuh/wazuh",
-    "layer": "Personal & dev security",
-    "phase": 3,
-    "mode": "service",
-    "note": "Endpoint monitoring"
-  },
-  {
-    "name": "Prefect",
-    "repo": "PrefectHQ/prefect",
-    "layer": "Pipelines & data quality",
-    "phase": 2,
-    "mode": "tool",
-    "note": ""
-  },
-  {
-    "name": "Great Expectations",
-    "repo": "great-expectations/great_expectations",
-    "layer": "Pipelines & data quality",
-    "phase": 2,
-    "mode": "tool",
-    "note": ""
-  },
-  {
-    "name": "RapidFuzz",
-    "repo": "rapidfuzz/RapidFuzz",
-    "layer": "Pipelines & data quality",
-    "phase": 2,
-    "mode": "tool",
-    "note": "Duplicate candidate matching"
-  },
-  {
-    "name": "Expo",
-    "repo": "expo/expo",
-    "layer": "Mobile candidate app",
-    "phase": 3,
-    "mode": "reference",
-    "note": ""
-  },
-  {
-    "name": "react-native-jobs",
-    "repo": "",
-    "layer": "Mobile candidate app",
-    "phase": 3,
-    "mode": "reference",
-    "note": "Fill owner/name"
-  },
-  {
-    "name": "Weblate",
-    "repo": "WeblateOrg/weblate",
-    "layer": "Multilingual",
-    "phase": 3,
-    "mode": "service",
-    "note": ""
-  },
-  {
-    "name": "awesome-translations",
-    "repo": "",
-    "layer": "Multilingual",
-    "phase": 3,
-    "mode": "reference",
-    "note": "Fill owner/name"
-  },
-  {
-    "name": "Medusa",
-    "repo": "medusajs/medusa",
-    "layer": "Marketplace / white-label",
-    "phase": 3,
-    "mode": "service",
-    "note": ""
+{
+  "version": "2.0.0",
+  "categories": {
+    "identity_and_zerotrust": [
+      {"repo": "dani-garcia/vaultwarden", "role": "Self-hosted password and TOTP vault", "priority": "critical", "tier": 1},
+      {"repo": "goauthentik/authentik", "role": "Self-hosted SSO, OIDC, and MFA identity provider", "priority": "critical", "tier": 1},
+      {"repo": "pomerium/pomerium", "role": "Identity-aware zero-trust access proxy", "priority": "critical", "tier": 1},
+      {"repo": "tailscale/tailscale", "role": "WireGuard mesh VPN for private admin access", "priority": "critical", "tier": 1},
+      {"repo": "juanfont/headscale", "role": "Self-hosted Tailscale control server", "priority": "optional", "tier": 2},
+      {"repo": "authzed/spicedb", "role": "Fine-grained relationship-based access control", "priority": "high", "tier": 2},
+      {"repo": "openfga/openfga", "role": "Fine-grained authorization engine", "priority": "optional", "tier": 2},
+      {"repo": "cerbos/cerbos", "role": "Policy-as-code authorization layer for recruiter RBAC", "priority": "high", "tier": 2},
+      {"repo": "gravitational/teleport", "role": "Audited short-lived SSH and database access", "priority": "optional", "tier": 3}
+    ],
+    "secrets_and_encryption": [
+      {"repo": "Infisical/infisical", "role": "Centralized secrets management and runtime injection", "priority": "critical", "tier": 1},
+      {"repo": "Infisical/agent-vault", "role": "Credential broker isolating API keys from AI agents", "priority": "critical", "tier": 1},
+      {"repo": "getsops/sops", "role": "Encrypted YAML, JSON, and ENV configuration files", "priority": "high", "tier": 1},
+      {"repo": "FiloSottile/age", "role": "Modern file encryption backend for SOPS and backups", "priority": "high", "tier": 1},
+      {"repo": "openbao/openbao", "role": "Open-source Vault-compatible dynamic secrets engine", "priority": "optional", "tier": 3}
+    ],
+    "code_and_supply_chain": [
+      {"repo": "gitleaks/gitleaks", "role": "Pre-commit and CI secret scanner for Git history", "priority": "critical", "tier": 1},
+      {"repo": "trufflesecurity/trufflehog", "role": "Deep credential discovery and live key verification", "priority": "critical", "tier": 1},
+      {"repo": "Yelp/detect-secrets", "role": "Baseline secret detection for legacy repositories", "priority": "medium", "tier": 2},
+      {"repo": "aquasecurity/trivy", "role": "Container, filesystem, IaC, and vulnerability scanner", "priority": "critical", "tier": 1},
+      {"repo": "semgrep/semgrep", "role": "Static analysis for injection, SSRF, and auth flaws", "priority": "critical", "tier": 1},
+      {"repo": "PyCQA/bandit", "role": "Python AST security linter", "priority": "critical", "tier": 1},
+      {"repo": "pypa/pip-audit", "role": "Python dependency vulnerability scanner via PyPA/OSV", "priority": "critical", "tier": 1},
+      {"repo": "google/osv-scanner", "role": "Lockfile vulnerability scanner backed by OSV database", "priority": "high", "tier": 1},
+      {"repo": "anchore/syft", "role": "SBOM generator for images and filesystems", "priority": "high", "tier": 2},
+      {"repo": "anchore/grype", "role": "SBOM vulnerability analyzer", "priority": "high", "tier": 2},
+      {"repo": "step-security/harden-runner", "role": "GitHub Actions egress auditing and runtime security", "priority": "critical", "tier": 1},
+      {"repo": "woodruffw/zizmor", "role": "Static security analysis for GitHub Actions workflows", "priority": "high", "tier": 1},
+      {"repo": "renovatebot/renovate", "role": "Automated dependency and pinned digest updates", "priority": "high", "tier": 2},
+      {"repo": "ossf/scorecard", "role": "Supply-chain security posture scoring", "priority": "medium", "tier": 2},
+      {"repo": "sigstore/cosign", "role": "Container image signing and verification", "priority": "medium", "tier": 3}
+    ],
+    "ai_guardrails_and_dlp": [
+      {"repo": "microsoft/presidio", "role": "Local PII detection and redaction before LLM inference", "priority": "critical", "tier": 1},
+      {"repo": "protectai/llm-guard", "role": "Prompt-injection, secret, and toxicity input/output scanner", "priority": "critical", "tier": 1},
+      {"repo": "promptfoo/promptfoo", "role": "CI red-teaming and regression testing for agent prompts", "priority": "high", "tier": 1},
+      {"repo": "guardrails-ai/guardrails", "role": "Structured LLM output validation and enforcement", "priority": "high", "tier": 2},
+      {"repo": "NVIDIA/NeMo-Guardrails", "role": "Programmable rails for conversational and tool-calling agents", "priority": "medium", "tier": 2},
+      {"repo": "NVIDIA/garak", "role": "Automated LLM vulnerability and jailbreak probe", "priority": "medium", "tier": 2},
+      {"repo": "Azure/PyRIT", "role": "Automated AI red-teaming framework", "priority": "optional", "tier": 3},
+      {"repo": "ljh-sh/token-actuary", "role": "Token counting, truncation, and pre-inference firewall", "priority": "medium", "tier": 2}
+    ],
+    "data_and_container_hardening": [
+      {"repo": "pgaudit/pgaudit", "role": "Session and object audit logging for PostgreSQL", "priority": "high", "tier": 1},
+      {"repo": "Cisco-Talos/clamav", "role": "Antivirus scanning for uploaded candidate CVs", "priority": "high", "tier": 1},
+      {"repo": "restic/restic", "role": "Encrypted, deduplicated database and CV backups", "priority": "critical", "tier": 1},
+      {"repo": "bridgecrewio/checkov", "role": "Terraform, Docker, and Kubernetes misconfiguration scanner", "priority": "high", "tier": 2},
+      {"repo": "hadolint/hadolint", "role": "Dockerfile best-practice and security linter", "priority": "high", "tier": 2},
+      {"repo": "goodwithtech/dockle", "role": "Container image security linter", "priority": "medium", "tier": 2},
+      {"repo": "CISOfy/lynis", "role": "Linux host hardening and compliance auditor", "priority": "medium", "tier": 2}
+    ],
+    "detection_siem_and_edge": [
+      {"repo": "wazuh/wazuh", "role": "Open-source SIEM and XDR for host and container monitoring", "priority": "high", "tier": 2},
+      {"repo": "falcosecurity/falco", "role": "Runtime container threat and syscall detection", "priority": "high", "tier": 2},
+      {"repo": "crowdsecurity/crowdsec", "role": "Collaborative IP reputation and brute-force blocker", "priority": "high", "tier": 1},
+      {"repo": "caddyserver/caddy", "role": "Automatic HTTPS reverse proxy", "priority": "high", "tier": 1},
+      {"repo": "corazawaf/coraza", "role": "OWASP-compatible Web Application Firewall for Caddy", "priority": "high", "tier": 2},
+      {"repo": "coreruleset/coreruleset", "role": "OWASP Core Rule Set for Coraza and ModSecurity", "priority": "high", "tier": 2},
+      {"repo": "zaproxy/zaproxy", "role": "Dynamic application security testing for web and APIs", "priority": "medium", "tier": 2},
+      {"repo": "projectdiscovery/nuclei", "role": "Template-based endpoint vulnerability scanner", "priority": "medium", "tier": 2},
+      {"repo": "louislam/uptime-kuma", "role": "Self-hosted uptime monitoring and alerting", "priority": "high", "tier": 1}
+    ],
+    "recruitment_ai_core_extra": [
+      {"repo": "BerriAI/litellm", "role": "Unified LLM proxy with multi-provider fallback routing", "priority": "critical", "tier": 1},
+      {"repo": "DS4SD/docling", "role": "Local offline resume PDF/DOCX extraction to Markdown", "priority": "critical", "tier": 1},
+      {"repo": "langfuse/langfuse", "role": "Self-hosted LLM trace, cost, and prompt audit logging", "priority": "high", "tier": 1},
+      {"repo": "qdrant/qdrant", "role": "Vector similarity engine for candidate-job matching", "priority": "high", "tier": 2},
+      {"repo": "PrefectHQ/prefect", "role": "Workflow orchestration for scheduled job/CV pipelines", "priority": "medium", "tier": 2},
+      {"repo": "minio/minio", "role": "Private S3-compatible object storage for encrypted CVs", "priority": "high", "tier": 1}
+    ]
   }
-]
+}

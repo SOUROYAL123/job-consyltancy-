@@ -1,4 +1,4 @@
 @echo off
-cd /d "%~dp0"
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0start.ps1" %*
+title Secure Recruitment Consultancy Workflow
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0start.ps1"
 pause

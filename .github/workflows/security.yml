@@ -1,0 +1,62 @@
+﻿name: Security CI Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  schedule:
+    - cron: '0 3 * * 1'
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  secret-and-code-scan:
+    name: Secrets, SAST & Dependency Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner (Audit Outbound Calls)
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a
+        with:
+          egress-policy: audit
+
+      - name: Checkout Repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+
+      - name: Run Gitleaks Secret Scanner
+        uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Dependencies & Python Scanners
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install bandit pip-audit semgrep
+
+      - name: Run Bandit (Python SAST)
+        run: bandit -r autorun.py dashboard.py recruit_agent.py -ll
+
+      - name: Run pip-audit (Python Dependency Vulnerabilities)
+        run: pip-audit -r requirements.txt
+
+      - name: Run Semgrep (Code Pattern Analysis)
+        run: semgrep scan --config auto --error
+
+      - name: Run Trivy (Filesystem, Secrets & Misconfigurations)
+        uses: aquasecurity/trivy-action@18f2510ee396bbf4004029dc0b394f2dd8c87dbb
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          severity: 'CRITICAL,HIGH'
+          exit-code: '1'
